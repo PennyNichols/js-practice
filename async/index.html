@@ -10,6 +10,8 @@
     <h1>async operations</h1>
     <div>
         <h4 id="surprise">nothing is going to happen</h4>
+        <h2 id="timerInfo"></h2>
+        <button id="btn">click here</button>
     </div>
     <script>
         console.log('hello')
@@ -19,9 +21,18 @@
         console.log('bye')
         const element = document.querySelector('#surprise')
         const randomTime=Math.random()*4000
-        setTimeout(()=> {
-            element.textContent = 'Surprise! Happy Holidays!'
-        },randomTime)
+        const button = document.querySelector('#btn')
+        const info = document.querySelector('#timerInfo')
+        
+        button.addEventListener('click', changeText)
+        
+        
+        function changeText(){
+            info.textContent = 'timer has started'
+            setTimeout(()=> {
+                element.textContent = 'Surprise! Happy Holidays!'
+            },randomTime)
+        }
     </script>
 </body>
 </html>
