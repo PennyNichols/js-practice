@@ -8,12 +8,20 @@
 </head>
 <body>
     <h1>async operations</h1>
+    <div>
+        <h4 id="surprise">nothing is going to happen</h4>
+    </div>
     <script>
         console.log('hello')
         setTimeout(()=>{
             console.log('after 5 seconds')
         }, 5000)
         console.log('bye')
+        const element = document.querySelector('#surprise')
+        const randomTime=Math.random()*4000
+        setTimeout(()=> {
+            element.textContent = 'Surprise! Happy Holidays!'
+        },randomTime)
     </script>
 </body>
 </html>
